@@ -19,13 +19,13 @@ class OrmForVoting
 
 public function saveWindows(OS $golos1) 
     {
-        
-        $sql = "insert into windows (golos) value (:golos)";
+        $a = "true";
+        $sql = "insert into answers (windows) value (:true)";
         
         $sth = $this->pdo->prepare($sql);
 
         $windows = $golos1->getGolosForWindows(); 
-        $sth->bindParam(":golos", $windows);
+        $sth->bindParam(":true", $a);
 
         $sth->execute();
 
@@ -33,13 +33,13 @@ public function saveWindows(OS $golos1)
 
     public function saveLinux(OS $golos2) 
     {
-        
-        $sql = "insert into linux (golos) value (:golos)";
+        $a = "true";
+        $sql = "insert into answers (linux) value (:true)";
         
         $sth = $this->pdo->prepare($sql);
 
         $linux = $golos2->getGolosForLinux(); 
-        $sth->bindParam(":golos", $linux);
+        $sth->bindParam(":true", $a);
 
         $sth->execute();
 
@@ -48,13 +48,13 @@ public function saveWindows(OS $golos1)
 
     public function saveMac(OS $golos3) 
     {
-        
-        $sql = "insert into mac (golos) value (:golos)";
+        $a = "true";
+        $sql = "insert into answers (mac) value (:true)";
         
         $sth = $this->pdo->prepare($sql);
 
         $mac = $golos3->getGolosForMac(); 
-        $sth->bindParam(":golos", $mac);
+        $sth->bindParam(":true", $a);
 
         $sth->execute();
 
@@ -64,13 +64,15 @@ public function saveWindows(OS $golos1)
 
      public function getAnswerAll()
     {   
-        $sql[0] = "select * from windows";
-       $sql[1] = "select * from linux";
-       $sql[2] = "select * from mac";
+       $a = "true";
+       $sql[0] = "select * from answers where windows = :true ";
+       $sql[1] = "select * from answers where linux = :true" ;
+       $sql[2] = "select * from answers where mac = :true" ;
 
        for($i=0;$i<3;$i++){
 
        $sth = $this->pdo->prepare($sql[$i]);
+       $sth->bindParam(":true", $a);
        $sth->execute();
 
        $count[$i] = $sth->rowCount();

@@ -13,19 +13,19 @@ $all = $orm->getAnswerAll();
 $ans = new OS ($all[0], $all[1], $all[2]);
 
 
-if (!empty($_POST["a1"]))  {
+if (!empty($_GET["a1"]))  {
 
-	$var1 = $_POST["a1"];
+	$var1 = $_GET["a1"];
 }
 
-if (!empty($_POST["a2"]))  {
+if (!empty($_GET["a2"]))  {
 
-	$var2 = $_POST["a2"];
+	$var2 = $_GET["a2"];
 }
 
-if (!empty($_POST["a3"]))  {
+if (!empty($_GET["a3"]))  {
 
-	$var3 = $_POST["a3"];
+	$var3 = $_GET["a3"];
 }
 
 
