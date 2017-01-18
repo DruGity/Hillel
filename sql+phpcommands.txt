@@ -1,0 +1,60 @@
+create database testshop;
+
+create table product (id int not null PRIMARY KEY auto_increment, type varchar (100), name varchar(100), price int, descr varchar(500), manuf varchar(100),  color varchar(100));
+
+create table model (id int not null PRIMARY KEY auto_increment, type varchar (100), name varchar(100), price int, descr varchar(500), manuf varchar(100),  color varchar(100), special varchar(200));
+
+create table good (id int not null PRIMARY KEY auto_increment, type varchar (100), name varchar(100), price int, descr varchar(500), manuf varchar(100),  color varchar(100), special2 varchar(200));
+
+insert into model (type, name, price, descr, manuf, color, special) value ("Tablet", "Ipad mini", 599, "Pretty nice product", "Apple", "Black", "-100$ till 01.01.2017");
+
+insert into product (type, name, price, descr, manuf, color) value ("Tablet", "Ipad mini", 599, "Pretty nice product", "Apple", "Black", "-100$ till 01.01.2017");
+
+insert into good (type, name, price, descr, manuf, color, special2) value ("Tablet", "Ipad mini", 599, "Pretty nice product", "Apple", "Black", "-100$ till 01.01.2017");
+
+
+ANSWERS:
+
+create database testanswers;
+create table windows (id int not null PRIMARY KEY auto_increment, golos varchar(50) not null);
+create table linux (id int not null PRIMARY KEY auto_increment, golos varchar(50) not null);
+create table mac (id int not null PRIMARY KEY auto_increment, golos varchar(50) not null);
+
+NewAnwsers:
+
+create database answers;
+
+create table answers (id int not null PRIMARY KEY auto_increment, windows varchar(50), linux varchar(50), mac varchar(50));
+
+insert into answers (windows) value ("true"); 
+insert into answers (linux) value ("true"); 
+insert into answers (mac) value ("true"); 
+
+select * from answers where windows = "true";
+select * from answers where linux = "true";
+select * from answers where mac = "true";
+
+
+
+
+
+$prod = new Product("Smartphone", "Iphone7", "1000$", "Very expensive phone", "Apple", "White");
+
+$prod2 = new Model("Tablet", "Ipad mini", "599$", "Pretty nice product", "Apple", "Black", "-100$ till " . " " . Model::TIME_FOR_OFFER2);
+
+$prod3 = new Good("Headphones", "CX300II", "50$", " Its comfortable headphones ", "sennheiser ", "yellow", "-10$ till" . " " . Good::TIME_FOR_OFFER);
+
+
+
+$this->prodType = $type;
+        $this->prodName = $name;
+        $this->prodPrice = $price;
+        $this->prodDescription = $descr;
+        $this->prodManufacturer = $manuf;
+        $this->prodColor = $color;
+        Special Offer
+        //Special Offer2
+
+        create table windows (id int not null PRIMARY KEY auto_increment, golos varchar(50) not null);
+
+        insert into mac (golos) value ("golos"); 
